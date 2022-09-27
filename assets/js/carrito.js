@@ -14,9 +14,6 @@ const tot = document.querySelector('#total');
 carrito.forEach(data => {
   
   tot.textContent = ` ${ Number(tot.textContent)+ Number(data.price*data.cantidad)}`; 
-  console.log(data.img)
-  // data.img = "../"+ data.img.slice(9,40); 
-  console.log(data.img)
     const table = document.createElement('tr');
     const html= `
     <td class="table__productos">

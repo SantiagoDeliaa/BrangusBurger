@@ -2,6 +2,7 @@ const items = document.getElementById('items');
 
 let carrito=[];
 
+// guardo en un array de objetos todas los productos del ecommerce
 const productos = [
   {
         id : 1,
@@ -110,9 +111,14 @@ const productos = [
   // trae los datos del storage del carrito
   const fetchStorageCarrito   = () => JSON.parse(localStorage.getItem('carrito'));
 
-  if(localStorage.getItem('carrito')){
-    carrito = JSON.parse(localStorage.getItem('carrito'))
-  }
+  const existe = localStorage.getItem('carrito');
+  // utilizo el operador ternario
+  existe && ( carrito = fetchStorageCarrito() );
+ 
+  // if(localStorage.getItem('carrito')){
+  //   carrito = JSON.parse(localStorage.getItem('carrito'))
+  // }
+
 
 // crea un objeto (producto) y se guarda dentro del storage con la clave carrito
   items.addEventListener('click', e => {
@@ -139,6 +145,7 @@ const productos = [
         if( carrito.find(element => element.id === producto.id)){
           carrito.forEach(element => {
             if(element.id ===producto.id){
+              // aca utilizo operadores avanzados
               element.cantidad++;
             }
           })
