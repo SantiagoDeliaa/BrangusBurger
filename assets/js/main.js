@@ -30,7 +30,7 @@ const productos = [
         nombre: "burguer 4",
         descrip: "Medallón de 180 gr + Cebolla caramelizada+ Queso Brie + Pepinos agridulces + Pan de papa Casero.",
         precio : 1000,
-        imagen: '../assets/image/burguer4.jpg'
+        imagen: './assets/image/burguer4.jpg'
     },
     {
         id : 5,
@@ -114,12 +114,13 @@ const productos = [
     carrito = JSON.parse(localStorage.getItem('carrito'))
   }
 
-
+// crea un objeto (producto) y se guarda dentro del storage con la clave carrito
   items.addEventListener('click', e => {
     if(e.target.matches('.btn-primary')){
       const card = e.target.parentElement.parentElement.parentElement;
       const id = e.target.id;
-      const img = card.querySelector('.image').getAttribute('src');
+      const imgValue = card.querySelector('.image').getAttribute('src');
+      const img = imgValue.replace("./assets","..");
       const name = card.querySelector('.card-title').textContent;
       const price = card.querySelector('#price').textContent;
       const value = card.querySelector('#selectInput').value;
@@ -141,15 +142,12 @@ const productos = [
               element.cantidad++;
             }
           })
-          console.log(producto.cantidad)
         }else{
           carrito.push(producto);
         }
 
           storageCarrito(carrito);
         }
-        console.log('ok');
       }
-      console.log(carrito);
       e.stopPropagation();  
     }); 

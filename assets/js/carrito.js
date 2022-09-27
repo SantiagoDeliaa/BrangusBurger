@@ -15,7 +15,7 @@ carrito.forEach(data => {
   
   tot.textContent = ` ${ Number(tot.textContent)+ Number(data.price*data.cantidad)}`; 
   console.log(data.img)
-  data.img = "../"+ data.img.slice(9,40); 
+  // data.img = "../"+ data.img.slice(9,40); 
   console.log(data.img)
     const table = document.createElement('tr');
     const html= `
@@ -35,18 +35,17 @@ carrito.forEach(data => {
   document.addEventListener('click', e => {
   
     if(e.target.matches('.btn-danger')){
+      // aca borro el nodo del carrito
       const tbody = e.target.parentElement.parentElement.parentElement;
       const table = e.target.parentElement.parentElement;
       tbody.removeChild(table);
-// aca actualizo el precio y borro el elemento
+      // aca actualizo el precio y borro el elemento del storage
       fetchStorageCarrito();
       let id = e.target.getAttribute('id');
       carrito = carrito.filter(element => element.id != id);
       const tot = document.querySelector('#total');
-      console.log(typeof(tot.textContent))
-      console.log(typeof(price))
-      const price = table.querySelector('.table_price');
-      tot.textContent = `${Number(tot.textContent)-Number(price)}`;
+      const price = table.querySelector('.table__price');
+      tot.textContent = `${tot.textContent - price.textContent}`;
       storageCarrito(carrito);
 
     }
