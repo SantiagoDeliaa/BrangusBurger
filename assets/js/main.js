@@ -6,14 +6,14 @@ let carrito=[];
 const productos = [
   {
         id : 1,
-        nombre: "burguer 1",
+        nombre: "Burguer 1",
         descrip: "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces + Pan de Papa Casero.",
         precio : 1200,
         imagen: './assets/image/burguer1.jpg'
       },
       {
         id : 2,
-        nombre: "burguer 2",
+        nombre: "Burguer 2",
         descrip: "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces y Pan de papa Casero",
         precio : 1000,
         
@@ -21,28 +21,28 @@ const productos = [
       },
       {
         id : 3,
-        nombre: "burguer 3",
+        nombre: "Burguer 3",
         descrip: "Medallón de 180 gr + Jamón + Muzzarella + Huevo a la Plancha + Morrón asado + Rúcula + Alioli y Pan de papa",
         precio : 1000,
         imagen: './assets/image/burguer3.jpg'
       },
       {
         id : 4,
-        nombre: "burguer 4",
+        nombre: "Burguer 4",
         descrip: "Medallón de 180 gr + Cebolla caramelizada+ Queso Brie + Pepinos agridulces + Pan de papa Casero.",
         precio : 1000,
         imagen: './assets/image/burguer4.jpg'
     },
     {
         id : 5,
-        nombre: "burguer 5",
+        nombre: "Burguer 5",
         descrip: "Medallón de 180 gr + Cheddar + Panceta + Salsa de Mostaza DIJON y MIEL + Pan de Papa Casero.",
         precio : 1000,
         imagen: './assets/image/burguer5.jpg'
       },
       {
         id : 6,
-        nombre: "burguer 6",
+        nombre: "Burguer 6",
         descrip: "Medallón de 180 gr + Queso azul + Panceta + Cebolla caramelizada + Pan de Papa Casero.",
         precio : 1000,
         imagen: './assets/image/burguer6.jpg'
@@ -142,9 +142,9 @@ const productos = [
         carrito.push(producto);
         storageCarrito(carrito);
       }else{
-        if( carrito.find(element => element.id === producto.id)){
+        if( carrito.find(element => (element.id === producto.id)&&(element.value === producto.value))){
           carrito.forEach(element => {
-            if(element.id ===producto.id){
+            if((element.id ===producto.id)&&(element.value === producto.value)){
               // aca utilizo operadores avanzados
               element.cantidad++;
             }

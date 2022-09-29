@@ -12,13 +12,21 @@ const tbody = document.querySelector('.tbody');
 const tot = document.querySelector('#total');
 
 carrito.forEach(data => {
-  
+  let valueText;
+  if(data.value === "1"){
+    valueText = "una carne";
+  }else if(data.value === "2"){
+    valueText = "dos carnes";
+  }else if(data.value === "3"){
+    valueText = "tres carnes"
+  };
+  console.log(valueText)
   tot.textContent = ` ${ Number(tot.textContent)+ Number(data.price*data.cantidad)}`; 
     const table = document.createElement('tr');
     const html= `
     <td class="table__productos">
        <img src="${data.img}" alt="">
-       <h6 class="table__title my-2">${data.name}</h6>
+       <h6 class="table__title my-2">${data.name}<p class="my-3">${valueText}</p></h6>
     </td>
     <td class="table__price m-0 p-3">${data.price*data.cantidad}</td>
     <td class="table__cantidad">
@@ -47,4 +55,16 @@ carrito.forEach(data => {
 
     }
 
+  })
+
+  const btn__comprar = document.querySelector('#btn__comprar');
+
+  btn__comprar.addEventListener('click', () => {
+    Swal.fire({
+      position: 'bottom-center',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
   })
