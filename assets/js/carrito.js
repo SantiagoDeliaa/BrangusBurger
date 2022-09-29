@@ -63,7 +63,7 @@ carrito.forEach(data => {
     Swal.fire({
       position: 'bottom-center',
       icon: 'success',
-      title: 'Your work has been saved',
+      title: 'Tu compra ha sido exitos',
       showConfirmButton: false,
       timer: 1500
     })
