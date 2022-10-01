@@ -1,81 +1,91 @@
 const items = document.getElementById('items');
 
-let carrito=[];
+let carrito=[]; 
 
 // guardo en un array de objetos todas los productos del ecommerce
-const productos = [
-  {
-        id : 1,
-        nombre: "Burguer 1",
-        descrip: "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces + Pan de Papa Casero.",
-        precio : 1200,
-        imagen: './assets/image/burguer1.jpg'
-      },
-      {
-        id : 2,
-        nombre: "Burguer 2",
-        descrip: "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces y Pan de papa Casero",
-        precio : 1000,
+// const productos = [
+//   {
+//         id : 1,
+//         nombre: "Burguer 1",
+//         descrip: "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces + Pan de Papa Casero.",
+//         precio : 1200,
+//         imagen: './assets/image/burguer1.jpg'
+//       },
+//       {
+//         id : 2,
+//         nombre: "Burguer 2",
+//         descrip: "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces y Pan de papa Casero",
+//         precio : 1000,
         
-        imagen: './assets/image/burguer2.jpg'
-      },
-      {
-        id : 3,
-        nombre: "Burguer 3",
-        descrip: "Medallón de 180 gr + Jamón + Muzzarella + Huevo a la Plancha + Morrón asado + Rúcula + Alioli y Pan de papa",
-        precio : 1000,
-        imagen: './assets/image/burguer3.jpg'
-      },
-      {
-        id : 4,
-        nombre: "Burguer 4",
-        descrip: "Medallón de 180 gr + Cebolla caramelizada+ Queso Brie + Pepinos agridulces + Pan de papa Casero.",
-        precio : 1000,
-        imagen: './assets/image/burguer4.jpg'
-    },
-    {
-        id : 5,
-        nombre: "Burguer 5",
-        descrip: "Medallón de 180 gr + Cheddar + Panceta + Salsa de Mostaza DIJON y MIEL + Pan de Papa Casero.",
-        precio : 1000,
-        imagen: './assets/image/burguer5.jpg'
-      },
-      {
-        id : 6,
-        nombre: "Burguer 6",
-        descrip: "Medallón de 180 gr + Queso azul + Panceta + Cebolla caramelizada + Pan de Papa Casero.",
-        precio : 1000,
-        imagen: './assets/image/burguer6.jpg'
-      },
+//         imagen: './assets/image/burguer2.jpg'
+//       },
+//       {
+//         id : 3,
+//         nombre: "Burguer 3",
+//         descrip: "Medallón de 180 gr + Jamón + Muzzarella + Huevo a la Plancha + Morrón asado + Rúcula + Alioli y Pan de papa",
+//         precio : 1000,
+//         imagen: './assets/image/burguer3.jpg'
+//       },
+//       {
+//         id : 4,
+//         nombre: "Burguer 4",
+//         descrip: "Medallón de 180 gr + Cebolla caramelizada+ Queso Brie + Pepinos agridulces + Pan de papa Casero.",
+//         precio : 1000,
+//         imagen: './assets/image/burguer4.jpg'
+//     },
+//     {
+//         id : 5,
+//         nombre: "Burguer 5",
+//         descrip: "Medallón de 180 gr + Cheddar + Panceta + Salsa de Mostaza DIJON y MIEL + Pan de Papa Casero.",
+//         precio : 1000,
+//         imagen: './assets/image/burguer5.jpg'
+//       },
+//       {
+//         id : 6,
+//         nombre: "Burguer 6",
+//         descrip: "Medallón de 180 gr + Queso azul + Panceta + Cebolla caramelizada + Pan de Papa Casero.",
+//         precio : 1000,
+//         imagen: './assets/image/burguer6.jpg'
+//       },
       
-    ];
+//     ];
+    const getData = async () => {
+      const response  =  await fetch('../../data.json');
+      const data = await response.json();
+      return data;
+    }
+    const printProduct = async() =>{
+      const product = await getData();
+    
+      product.forEach((data)=>{
+        const card = document.createElement('div')
+        const html = ` <div class="d-flex justify-content-center mb-4">
+        <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+        <h5 class="card-title pt-2 text-center text-primary">${data.nombre}</h5>
+        <img src="${data.imagen}" class="image image card-img-top" alt="...">
+        <div class="card-body">
+        <p class="card-text   text-white-50 descripription">${data.descrip}</p>
+        <div class="d-flex">
+        <select id="selectInput" class="tamaño mb-3 form-select form-select-sm" aria-label=".form-select-sm example">
+        <option  value="1" ">Una carne</option>
+        <option value="2" >Dos carnes</option>
+        <option value="3" >Tres carnes</option>
+        </select>
+        <h5 class="d-flex text-primary mx-4 ">$<p id="price">${data.precio}</p></h5>
+        </div>
+        
+        <div class="d-grid gap-2">
+        <button class="btn btn-primary button" id = "${data.id}" ">Añadir a Carrito</a>
+        </div>
+        </div>
+        </div>
+        </div> `;
+        card.innerHTML = html;
+        items.appendChild(card);
+      })
+    }
+    printProduct();
     // esta programa lo que hace es imprimir en pantalla las card de cada producto
-    productos.forEach((data)=>{
-      const card = document.createElement('div')
-      const html = ` <div class="d-flex justify-content-center mb-4">
-      <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-      <h5 class="card-title pt-2 text-center text-primary">${data.nombre}</h5>
-      <img src="${data.imagen}" class="image image card-img-top" alt="...">
-      <div class="card-body">
-      <p class="card-text   text-white-50 descripription">${data.descrip}</p>
-      <div class="d-flex">
-      <select id="selectInput" class="tamaño mb-3 form-select form-select-sm" aria-label=".form-select-sm example">
-      <option  value="1" ">Una carne</option>
-      <option value="2" >Dos carnes</option>
-      <option value="3" >Tres carnes</option>
-      </select>
-      <h5 class="d-flex text-primary mx-4 ">$<p id="price">${data.precio}</p></h5>
-      </div>
-      
-      <div class="d-grid gap-2">
-      <button class="btn btn-primary button" id = "${data.id}" ">Añadir a Carrito</a>
-      </div>
-      </div>
-      </div>
-      </div> `;
-      card.innerHTML = html;
-      items.appendChild(card);
-    })
     
     
     // esta funcion se encarga de obtener los valores del input seleccionado cuando se escucha el evento click y modifica el precio del producto

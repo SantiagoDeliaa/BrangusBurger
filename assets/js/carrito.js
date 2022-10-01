@@ -14,11 +14,11 @@ const tot = document.querySelector('#total');
 carrito.forEach(data => {
   let valueText;
   if(data.value === "1"){
-    valueText = "una carne";
+    valueText = "# Una carne";
   }else if(data.value === "2"){
-    valueText = "dos carnes";
+    valueText = "# Dos carnes";
   }else if(data.value === "3"){
-    valueText = "tres carnes"
+    valueText = "# Tres carnes"
   };
   console.log(valueText)
   tot.textContent = ` ${ Number(tot.textContent)+ Number(data.price*data.cantidad)}`; 
