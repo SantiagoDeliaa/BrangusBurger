@@ -17,7 +17,7 @@ const getData = async () => {
         <h5 class="card-title pt-2 text-center text-primary">${data.nombre}</h5>
         <img src="${data.imagen}" class="image image card-img-top" alt="...">
         <div class="card-body">
-        <p class="card-text   text-white-50 descripription">${data.descrip}</p>
+        <p class="card-text   text-white-50 descripription">${data.desc}</p>
         <div class="d-flex">
         <select id="selectInput" class="tamaño mb-3 form-select form-select-sm" aria-label=".form-select-sm example">
         <option  value="1" ">Una carne</option>
@@ -38,9 +38,11 @@ const getData = async () => {
       })
     }
     printProduct();
-        
+    
+    
     // esta funcion se encarga de obtener los valores del input seleccionado cuando se escucha el evento click y modifica el precio del producto
-    document.addEventListener("change", e => {
+
+    document.addEventListener("change", async (e) => {
       if (e.target.matches("#selectInput")) {
         let card = e.target.parentNode.parentElement;
         console.log(card)
@@ -49,7 +51,8 @@ const getData = async () => {
         const price = card.querySelector("#price");
         const value = e.target.value;
         console.log(`Valor seleccionado ${value}`);
-        productos.forEach((element) => {
+        const product = await getData();
+        product.forEach((element) => {
           if (element.id == id) {
             if (value == 1) {
               price.textContent = `${element.precio}`;

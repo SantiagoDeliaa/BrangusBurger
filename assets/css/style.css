@@ -59,9 +59,12 @@ header{
 .table__productos{
     display: flex;
 }
+.table__title{
+    font-size: 12px;
+}
 
 .table__productos > img{
-    width: 7rem;
+    width: 5rem;
     object-fit: contain;
     border-radius: 6px;
     margin-right: 20px;
