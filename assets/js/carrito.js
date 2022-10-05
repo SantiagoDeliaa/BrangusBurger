@@ -1,7 +1,8 @@
 const fetchStorageCarrito   = () => JSON.parse(localStorage.getItem('carrito'));
 const tbody = document.querySelector('.tbody');
-const tot = document.querySelector('#total');
+const btn__comprar = document.querySelector('#btn__comprar');
 let carrito = [];
+
 const storageCarrito = (carrito) => {
   const  json = JSON.stringify(carrito);
   localStorage.setItem('carrito',json)
@@ -10,6 +11,7 @@ if(localStorage.getItem('carrito')){
   carrito = JSON.parse(localStorage.getItem('carrito'));
 }
 
+// esta funcion actualiza el precio total del carrito
 const updatePriceTotal = () =>{
   const priceTot = document.querySelector('#total');
   let total = 0;
@@ -19,6 +21,8 @@ const updatePriceTotal = () =>{
   });
   priceTot.textContent = total;
 }
+
+// esta funcion imprime el html dinamico del carrito una vez agregado un producto
 carrito.forEach(data => {
   let valueText;
   if(data.value === "1"){
@@ -43,14 +47,13 @@ carrito.forEach(data => {
   table.innerHTML= html;
   tbody.appendChild(table);
   
-  tot.textContent = ` ${ Number(tot.textContent) + Number(data.price*data.cantidad)}`; 
-  // updatePriceTotal();
+  updatePriceTotal();
     
   });
-  document.addEventListener('click', e => {
-    
+
+  // esta funcion borra el elemento deseado del carrito y actualiza el precio total.
+  document.addEventListener('click', e => {  
     if(e.target.matches('.btn-danger')){
-      // aca borro el nodo del carrito
       const tbody = e.target.parentElement.parentElement.parentElement;
       const table = e.target.parentElement.parentElement;
       tbody.removeChild(table);
@@ -65,13 +68,12 @@ carrito.forEach(data => {
           carrito.splice(i,1);
         }
       }
-      // const index = carrito.map(data => (data.id === id)&&(data.value===value))
-      // // const index=carrito.indexOf((data => data.id === id)&&(data.value===value))
-      // carrito.splice(index,1)
       storageCarrito(carrito);
       updatePriceTotal();
       }
     });
+
+// esta funcion lo que hace es que podamos agregar o ir quitando productos desde el mismo carrito
   document.addEventListener('change', e => {
     if(e.target.matches('input')){
        const apuntar = e.target;
@@ -79,7 +81,7 @@ carrito.forEach(data => {
        const value = apuntar.parentElement.parentElement.querySelector('p').getAttribute('id');
        const valueCantidad = apuntar.value; 
        fetchStorageCarrito();
-       
+      //  busco el producto que quiero aumentar o disminuir su cantidad desde carrito
        if( carrito.find(element => (element.id ===  id)&&(element.value === value))){
         carrito.forEach(element => {
           if((element.id ===id)&&(element.value === value)){
@@ -95,8 +97,7 @@ carrito.forEach(data => {
   
 
 
-
-  const btn__comprar = document.querySelector('#btn__comprar');
+// al apretar click en el boton comprar imprime en pantalla una alerta de pago exitoso    
   
   btn__comprar.addEventListener('click', () => {
     Swal.fire({

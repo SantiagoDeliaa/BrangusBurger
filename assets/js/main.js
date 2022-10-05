@@ -2,11 +2,13 @@ const items = document.getElementById('items');
 
 let carrito=[]; 
 
+// getDAta es una funcion async la cual trae de data.js los datos de los productos.
 const getData = async () => {
   const response  =  await fetch('../../data.json');
   const data = await response.json();
   return data;
 }
+// esta funcion asyncrona lo que hace es traer datos y modificar el dom para mostrar en pantalla el producto.
     const printProduct = async() =>{
       const product = await getData();
     
