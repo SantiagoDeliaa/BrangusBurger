@@ -10,6 +10,15 @@ if(localStorage.getItem('carrito')){
   carrito = JSON.parse(localStorage.getItem('carrito'));
 }
 
+const updatePriceTotal = () =>{
+  const priceTot = document.querySelector('#total');
+  let total = 0;
+  carrito.forEach(producto => {
+    subTotal = producto.cantidad*producto.price;
+    total+= subTotal;
+  });
+  priceTot.textContent = total;
+}
 carrito.forEach(data => {
   let valueText;
   if(data.value === "1"){
@@ -35,15 +44,9 @@ carrito.forEach(data => {
   tbody.appendChild(table);
   
   tot.textContent = ` ${ Number(tot.textContent) + Number(data.price*data.cantidad)}`; 
+  // updatePriceTotal();
     
   });
-    // updatePriceTotal();
-  
-  // const  updatePriceTotal = () => {
-    //   let tot = 0;
-    //   const priceTot = document.querySelector('#total');
-    //   const cantidad 
-    // }
   document.addEventListener('click', e => {
     
     if(e.target.matches('.btn-danger')){
@@ -55,15 +58,20 @@ carrito.forEach(data => {
       fetchStorageCarrito();
       const id = e.target.getAttribute('id');
       const value = table.querySelector('p').getAttribute('id');
-      console.log(`el value es: ${typeof(value)}`)
-      console.log(`el id es: ${typeof(id)}`)
-      carrito = carrito.filter(element => (Number(element.value != value)) && (Number( element.id != id)));
-      const price = table.querySelector('.table__price');
-      tot.textContent = `${tot.textContent - price.textContent}`;
+      console.log(`el value es: ${(value)}`)
+      console.log(`el id es: ${(id)}`)
+      for (let i = 0; i < carrito.length; i++) {
+        if((carrito[i].value === value)&&(carrito[i].id === id)){
+          carrito.splice(i,1);
+        }
+      }
+      // const index = carrito.map(data => (data.id === id)&&(data.value===value))
+      // // const index=carrito.indexOf((data => data.id === id)&&(data.value===value))
+      // carrito.splice(index,1)
       storageCarrito(carrito);
-    }
-    
-  })
+      updatePriceTotal();
+      }
+    });
   document.addEventListener('change', e => {
     if(e.target.matches('input')){
        const apuntar = e.target;
@@ -77,6 +85,7 @@ carrito.forEach(data => {
           if((element.id ===id)&&(element.value === value)){
             // aca utilizo operadores avanzados
             element.cantidad = valueCantidad;
+            updatePriceTotal();
           }
         })
       }
