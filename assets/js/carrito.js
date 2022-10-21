@@ -1,6 +1,7 @@
 const fetchStorageCarrito   = () => JSON.parse(localStorage.getItem('carrito'));
 const tbody = document.querySelector('.tbody');
 const btn__comprar = document.querySelector('#btn__comprar');
+const cartMenuNum = document.getElementById('cart_menu_num');
 let carrito = [];
 
 const storageCarrito = (carrito) => {
@@ -10,7 +11,7 @@ const storageCarrito = (carrito) => {
 if(localStorage.getItem('carrito')){
   carrito = JSON.parse(localStorage.getItem('carrito'));
 }
-
+cartMenuNum.textContent = carrito.length;
 // esta funcion actualiza el precio total del carrito
 const updatePriceTotal = () =>{
   const priceTot = document.querySelector('#total');
@@ -69,6 +70,7 @@ carrito.forEach(data => {
         }
       }
       storageCarrito(carrito);
+      cartMenuNum.textContent = carrito.length;
       updatePriceTotal();
       }
     });

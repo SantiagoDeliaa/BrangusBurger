@@ -1,4 +1,5 @@
 const items = document.getElementById('items');
+const cartMenuNum = document.getElementById('cart_menu_num');
 
 let carrito=[]; 
 
@@ -16,7 +17,7 @@ const getData = async () => {
         const card = document.createElement('div')
         const html = ` <div class="d-flex justify-content-center mb-4">
         <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-        <h5 class="card-title pt-2 text-center text-primary">${data.nombre}</h5>
+        <h5 class="card-title pt-2 text-center text-white">${data.nombre}</h5>
         <img src="${data.imagen}" class="image image card-img-top" alt="...">
         <div class="card-body">
         <p class="card-text   text-white-50 descripription">${data.desc}</p>
@@ -26,7 +27,7 @@ const getData = async () => {
         <option value="2" >Dos carnes</option>
         <option value="3" >Tres carnes</option>
         </select>
-        <h5 class="d-flex text-primary mx-4 ">$<p id="price">${data.precio}</p></h5>
+        <h5 class="d-flex text-white mx-4 ">$<p id="price">${data.precio}</p></h5>
         </div>
         
         <div class="d-grid gap-2">
@@ -113,9 +114,9 @@ const getData = async () => {
         }else{
           carrito.push(producto);
         }
-
           storageCarrito(carrito);
         }
+        cartMenuNum.textContent = carrito.length;
       }
       e.stopPropagation();  
     }); 
