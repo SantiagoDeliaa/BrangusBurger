@@ -20,7 +20,7 @@ const card = document.createElement('div')
             </div>
             <div>
                 <label for="desc" class="form-label">desc</label>
-                <textarea type="text" class="form-control" id="desc" name="desc">value="${fetchStorageCarrito()[0].desc}"</textarea>
+                <textarea type="text" class="form-control" id="desc" name="desc"> "${fetchStorageCarrito()[0].desc}"</textarea>
             </div>
             <div>
                 <label for="precio" class="form-label">precio</label>

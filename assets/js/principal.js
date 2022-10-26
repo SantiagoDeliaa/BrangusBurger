@@ -4,6 +4,7 @@ const editar = document.querySelector('.editar')
 const productos = []
 
 
+
 const getData = async () => {
     const response  =  await fetch('http://localhost:8080/admin/');
     const data = await response.json();
@@ -34,9 +35,8 @@ const getData = async () => {
           </div>
           
           <div class="d-grid gap-2">
-          <a class="text-white" href="http://127.0.0.1:5503/assets/pages/editarProducto.html"><button type="submit" class="btn btn-primary buttonEditar" id = "http://localhost:8080/admin/${data._id}">Editar</a>
-          
-          <form class="form-delete" action="http://localhost:8080/admin/${data._id}/?_method=DELETE" method="post" style="display:inline-block">
+          <button type="submit" class="btn btn-primary buttonEditar" id = "/admin/${data._id}"><a class="text-white" href="/assets/pages/editarProducto.html">Editar</a></button>
+          <form class="form-delete" action="/admin/${data._id}/?_method=DELETE" method="post" style="display:inline-block">
             <button type="submit" class="btn btn-danger">Borrar</button>
           </form>
 
