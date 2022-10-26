@@ -42,7 +42,7 @@ carrito.forEach(data => {
   </td>
   <td class="table__price m-0 p-3">${data.price}</td>
   <td class="table__cantidad">
-  <input type="number" min="1" value="${data.cantidad}">
+  <input id="inputCantidad" type="number" min="1" value="${data.cantidad}">
   <button class="delete btn btn-danger" id="${data.id}">X</button>
   </td>`
   table.innerHTML= html;
@@ -77,7 +77,7 @@ carrito.forEach(data => {
 
 // esta funcion lo que hace es que podamos agregar o ir quitando productos desde el mismo carrito
   document.addEventListener('change', e => {
-    if(e.target.matches('input')){
+    if(e.target.matches('#inputCantidad')){
        const apuntar = e.target;
        const id = apuntar.parentElement.querySelector('.btn-danger').getAttribute("id");
        const value = apuntar.parentElement.parentElement.querySelector('p').getAttribute('id');
@@ -109,4 +109,19 @@ carrito.forEach(data => {
       showConfirmButton: false,
       timer: 1500
     })
+  })
+  
+
+
+  document.addEventListener('change', e =>{
+    if(e.target.matches('#take_away') || e.target.matches('#home_delivery')){
+      const containerNextStep = document.getElementById('container_nextStep');
+      console.log(containerNextStep)
+      const value = e.target.value;
+      if(value == 1){
+        console.log('ok 1')
+      }else{
+        console.log('ok 2')
+      }
+    }
   })

@@ -59,17 +59,28 @@
         </tbody>
       </table>
       <br><br>
-      <div class="row mx-4">
-        <div>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>¿Quiere envio?</option>
+      <div class="text-center mx-4 w-100">
+          <div id="container" class="text-white">
+            <p>Elige una de nuestras dos opciones :</p>
+            <div>
+                <input class="mx-2" type="radio" id="take_away" name="contact" value="1">
+                <label><p >Take Away</p></label>
+         
+                <input class="mx-2" type="radio" id="home_delivery" name="contact" value="2">
+                <label><p >¿Lo llevamos a tu casa?</p></label>
+            </div>
+            <div id="container_nextStep">
+
+            </div>
+          <!-- <select class="form-select" aria-label="Default select example">
+            <option selected>¿Lo llevamos a tu casa?</option>
             <option value="1">barrio 1</option>
             <option value="2">barrio 2</option>
             <option value="3">barrio 3</option>
-            <option value="1">barrio 4</option>
-            <option value="2">barrio 5</option>
-            <option value="3">barrio 6</option>
-          </select>
+            <option value="4">barrio 4</option>
+            <option value="5">barrio 5</option> 
+            <option value="6">barrio 6</option>
+          </select> -->
         </div>
         <div>
           <h3 class="itemCartTotal text-white d-flex gap-2 my-4">total: <p id="total">0</p></h3>
