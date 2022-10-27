@@ -35,8 +35,8 @@ const getData = async () => {
           </div>
           
           <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-primary buttonEditar" id = "/admin/${data._id}"><a class="text-white" href="/assets/pages/editarProducto.html">Editar</a></button>
-          <form class="form-delete" action="/admin/${data._id}/?_method=DELETE" method="post" style="display:inline-block">
+          <button type="submit" class="btn btn-primary buttonEditar" id = "http://localhost:8080/admin/${data._id}"><a class="text-white" href="/assets/pages/editarProducto.html">Editar</a></button>
+          <form class="form-delete" action="http://localhost:8080/admin/${data._id}/?_method=DELETE" method="post" style="display:inline-block">
             <button type="submit" class="btn btn-danger">Borrar</button>
           </form>
 
@@ -48,6 +48,7 @@ const getData = async () => {
           items.appendChild(card);
         })
       }
+
 
       items.addEventListener('click', e => {
         const id = e.target.getAttribute('id');
@@ -70,13 +71,7 @@ const getData = async () => {
 
 
 
-
-
-
-
-
       printProduct();
-
 
 
 
