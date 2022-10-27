@@ -12,6 +12,12 @@ header{
 .height{
    height: 100vh;
 }
+.shoping__cart{
+    width: 40px;
+}
+.opacity{
+    opacity: 0.8 ;
+}
 .background-image{
     position: absolute;
     top: 0;
@@ -93,7 +99,14 @@ header{
     }
     
 }
-
+@media(min-width:992px){
+    .media{
+        display: flex;
+    }
+    .shoping__cart{
+        order: 3;
+    }
+}
 .details__carrito{
     width: 100%;
     color: white;
@@ -112,4 +125,47 @@ header{
 }
 .precio{
     display: flex;
+}
+
+.modal-content{
+    top: 30vh;
+}
+/* CSS para posicionar el bade cerca del carrito*/
+.cart {
+  position: relative;
+}
+
+#cart_menu_num {
+  position: absolute;
+  top: 0;
+  left: 55%;
+  background: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2px;
+}
+
+
+/* propiedades de la galeria */
+
+
+
+.details{
+    padding: 30px;
+    width: 400px;
+}
+.details img {
+    width: 100%;
+}
+
+@media(min-width: 600px){
+    .container-slider img{
+        width: 100vw;
+        height: 60vh;
+    }
 }
