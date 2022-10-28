@@ -4,7 +4,6 @@ const editar = document.querySelector('.editar')
 console.log(fetchStorageCarrito()[0].nombre)
 
 
-
 const card = document.createElement('div')
         const html = ` <div class="d-flex justify-content-center mb-4">
         <div class="col-6">
@@ -25,6 +24,9 @@ const card = document.createElement('div')
             <div>
                 <label for="precio" class="form-label">precio</label>
                 <input type="number" class="form-control" id="precio" name="precio" value="${fetchStorageCarrito()[0].precio}">
+            </div>
+            <div>
+                <img src="${fetchStorageCarrito()[0].imagen.substring(1)}" alt="">
             </div>
             <div>
                 <label for="imagen" class="form-label">Imagen</label>
