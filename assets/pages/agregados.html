@@ -38,7 +38,6 @@
             <ul class="dropdown-menu bg-dark text-center">
               <li><a class="dropdown-item text-white" href="../pages/burgers.html">Burgers</a></li>
               <li><a class="dropdown-item text-white" href="../pages/agregados.html">Agregados</a></li>
-              <li><a class="dropdown-item text-white" href="../pages/bebidas.html">Bebidas</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -52,19 +51,43 @@
     </div>
   </nav>
 
+
+
+  <!-- modal -->
+  <div class="modal fade dark" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h1 class=" titulo-modal   fs-3 agregados-title " id="staticBackdropLabel"></h1>
+          <button type="button" class="fs-3 white bg-dark" data-bs-dismiss="modal" aria-label="Close"> X</button>
+        </div>
+        <div class="modal-body">
+          <p class="precio-modal">$</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Seccion principal agregados -->
   <main class="contenedor-agregados ">
     <h2 class="section-header">Agregados</h2>
     <section id="cont-extras">
-
+      
     </section>
     <h2 class="section-header">Cervezas</h2>
     <section id="cont-cervezas">
-
+     
     </section>
     <h2 class="section-header">Bebidas sin alcohol</h2>
     <section id="cont-bebidasSinAlcohol">
 
+      
     </section>
   </main>
 
