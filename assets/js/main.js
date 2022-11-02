@@ -89,7 +89,7 @@ document.addEventListener("change", async (e) => {
   
   // crea un objeto (producto) y se guarda dentro del storage con la clave carrito
   items.addEventListener('click', e => {
-    if(e.target.matches('.btn-primary')){
+    if(e.target.matches('.btn-warning')){
       const card = e.target.parentElement.parentElement.parentElement;
       const id = e.target.id;   
       const imgValue = card.querySelector('.image').getAttribute('src');
