@@ -6,7 +6,7 @@ console.log(fetchStorageProducto()[0].nombre)
 
 const card = document.createElement('div')
         const html = ` <div class="d-flex justify-content-center mb-4">
-        <div class="col-6">
+        <div class="col-6"> 
 
         <form action="http://localhost:8080/admin/?_method=PUT" method="post" >
             <div>

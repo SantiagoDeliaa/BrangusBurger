@@ -35,7 +35,7 @@ const getData = async () => {
           </div>
           
           <div class="d-grid gap-2">
-          <button onclick="location.href='/assets/pages/editarProducto.html'" type="submit" class="btn btn-primary buttonEditar" id = "http://localhost:8080/admin/${data._id}">Editar</button>
+          <button  type="submit" class="btn btn-primary buttonEditar" id = "http://localhost:8080/admin/${data._id}">Editar</button>
           <form  class="form-delete" action="http://localhost:8080/admin/${data._id}/?_method=DELETE" method="post" style="display:inline-block">
             <button type="submit" class="btn btn-danger">Borrar</button>
           </form>
@@ -51,6 +51,7 @@ const getData = async () => {
 
 
       items.addEventListener('click', e => {
+        e.preventDefault()
         const id = e.target.getAttribute('id');
         const getEditar = async () => {
             const response  =  await fetch(id);
@@ -66,11 +67,11 @@ const getData = async () => {
                     }
 
                 getEditar().then(result => datosEditar(result))
-
           
+          setTimeout(() => {
+            location.href='/assets/pages/editarProducto.html'
+          }, 1000);
         });
-
-
 
       printProduct();
 
