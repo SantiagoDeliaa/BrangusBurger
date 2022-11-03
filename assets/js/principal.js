@@ -26,7 +26,7 @@ const getData = async () => {
           const html = ` <div class="d-flex justify-content-center mb-4">
           <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
           <h5 class="card-title pt-2 text-center text-primary">${data.nombre}</h5>
-          <img src="${data.imagen}" class="image image card-img-top" alt="...">
+          <img src="${data.imagen.substring(1)}" class="image image card-img-top" alt="...">
           <div class="card-body">
           <p class="card-text text-white-50 descripription">${data.desc}</p>
           <div class="d-flex">
@@ -35,8 +35,8 @@ const getData = async () => {
           </div>
           
           <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-primary buttonEditar" id = "http://localhost:8080/admin/${data._id}"><a class="text-white" href="/assets/pages/editarProducto.html">Editar</a></button>
-          <form class="form-delete" action="http://localhost:8080/admin/${data._id}/?_method=DELETE" method="post" style="display:inline-block">
+          <button onclick="location.href='/assets/pages/editarProducto.html'" type="submit" class="btn btn-primary buttonEditar" id = "http://localhost:8080/admin/${data._id}">Editar</button>
+          <form  class="form-delete" action="http://localhost:8080/admin/${data._id}/?_method=DELETE" method="post" style="display:inline-block">
             <button type="submit" class="btn btn-danger">Borrar</button>
           </form>
 
@@ -62,6 +62,7 @@ const getData = async () => {
                     const datosEditar = (productos) => {
                         const  json = JSON.stringify(productos);
                         localStorage.setItem('producto',json)
+                        console.log(productos)
                     }
 
                 getEditar().then(result => datosEditar(result))
