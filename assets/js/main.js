@@ -23,7 +23,8 @@ cartMenuNum.textContent = carrito.length;
 const getData = async () => {
   const response  =  await fetch('../../data.json');
   const data = await response.json();
-  return data;
+  let burgers = data.filter( e => e.categoria == "burger") // metodo para que traiga solamente las burgers
+  return burgers;
 }
 
 
