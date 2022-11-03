@@ -4,42 +4,114 @@
           "nombre": "Burguer 1",
           "desc": "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces + Pan de Papa Casero.",
           "precio" : 1200,
-          "imagen": "./assets/image/burguer1.jpg"
+          "imagen": "../image/burguer1.jpg",
+          "categoria": "burger"
         },
         {
           "id" : 2,
           "nombre": "Burguer 2",
           "desc": "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces y Pan de papa Casero",
-          "precio" : 1000,
-          
-          "imagen": "./assets/image/burguer2.jpg"
+          "precio" : 1000,          
+          "imagen": "../image/burguer2.jpg",
+          "categoria": "burger"
         },
         {
           "id" : 3,
           "nombre": "Burguer 3",
           "desc": "Medallón de 180 gr + Jamón + Muzzarella + Huevo a la Plancha + Morrón asado + Rúcula + Alioli y Pan de papa",
           "precio" : 1000,
-          "imagen": "./assets/image/burguer3.jpg"
+          "imagen": "../image/burguer3.jpg",
+          "categoria": "burger"
         },
         {
           "id" : 4,
           "nombre": "Burguer 4",
           "desc": "Medallón de 180 gr + Cebolla caramelizada+ Queso Brie + Pepinos agridulces + Pan de papa Casero.",
           "precio" : 1000,
-          "imagen": "./assets/image/burguer4.jpg"
+          "imagen": "../image/burguer4.jpg",
+          "categoria": "burger"
       },
       {
           "id" : 5,
           "nombre": "Burguer 5",
           "desc": "Medallón de 180 gr + Cheddar + Panceta + Salsa de Mostaza DIJON y MIEL + Pan de Papa Casero.",
           "precio" : 1000,
-          "imagen": "./assets/image/burguer5.jpg"
+          "imagen": "../image/burguer5.jpg",
+          "categoria": "burger"
         },
         {
           "id" : 6,
           "nombre": "Burguer 6",
           "desc": "Medallón de 180 gr + Queso azul + Panceta + Cebolla caramelizada + Pan de Papa Casero.",
           "precio" : 1000,
-          "imagen": "./assets/image/burguer6.jpg"
+          "imagen": "../image/burguer6.jpg",
+          "categoria": "burger"
+        },
+        {
+          "id":7,
+          "nombre":"Salta 473 cc",
+          "desc":"Aclarar gusto (Rubia, Roja, Ipa)",
+          "precio":430,
+          "imagen":"../image/beer_salta.jpg",
+          "categoria":"cervezas"
+        },
+        {
+          "id":8,
+          "nombre":"Miller 473 cc",
+          "desc":"",
+          "precio":450,
+          "imagen":"../image/beer_miller.jpg",
+          "categoria":"cervezas"
+        },
+        {
+          "id":9,
+          "nombre":"Sol 473 cc",
+          "desc":"",
+          "precio":400,
+          "imagen":"../image/beer_sol.jpg",
+          "categoria":"cervezas"
+        },
+        {
+          "id":10,
+          "nombre":"Scheneider 473 cc",
+          "desc":"",
+          "precio":300,
+          "imagen":"../image/beer_scheneider.jpg",
+          "categoria":"cervezas"
+        },
+        {
+          "id":11,
+          "nombre":"Aquarius 1.5L",
+          "desc":"Aclarar gusto deseado",
+          "precio":400,
+          "imagen":"../image/aquarius-1,5L.jpg",
+          "categoria":"sinAlcohol"
+        },
+        {
+          "id":12,
+          "nombre":"Gaseosas linea Coca-Cola 1.5L",
+          "desc":"aclarar gaseosa deseada",
+          "precio":300,
+          "imagen":"../image/coca-sprite-1.5L.jpg",
+          "categoria":"sinAlcohol"
+        },
+       
+        {
+          "id":13,
+          "nombre":"Aquarius 600ml",
+          "desc":"Aclarar gusto deseado",
+          "precio":300,
+          "imagen":"../image/aquarius-600ml.jpg",
+          "categoria":"sinAlcohol"
+        },
+       
+        {
+          "id":14,
+          "nombre":"Gaseosas linea Coca-Cola 600ml",
+          "desc":"Aclarar gaseosa deseada",
+          "precio":300,
+          "imagen":"../image/coca-sprite-600ml.jpg",
+          "categoria":"sinAlcohol"
         }
-]
+      
+] 
