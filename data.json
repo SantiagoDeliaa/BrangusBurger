@@ -1,45 +1,284 @@
 [
-        {
-          "id" : 1,
-          "nombre": "Burguer 1",
-          "desc": "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces + Pan de Papa Casero.",
-          "precio" : 1200,
-          "imagen": "../image/burguer1.jpg"
-        },
-        {
-          "id" : 2,
-          "nombre": "Burguer 2",
-          "desc": "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces y Pan de papa Casero",
-          "precio" : 1000,
-          
-          "imagen": "../image/burguer2.jpg"
-        },
-        {
-          "id" : 3,
-          "nombre": "Burguer 3",
-          "desc": "Medallón de 180 gr + Jamón + Muzzarella + Huevo a la Plancha + Morrón asado + Rúcula + Alioli y Pan de papa",
-          "precio" : 1000,
-          "imagen": "../image/burguer3.jpg"
-        },
-        {
-          "id" : 4,
-          "nombre": "Burguer 4",
-          "desc": "Medallón de 180 gr + Cebolla caramelizada+ Queso Brie + Pepinos agridulces + Pan de papa Casero.",
-          "precio" : 1000,
-          "imagen": "../image/burguer4.jpg"
-      },
-      {
-          "id" : 5,
-          "nombre": "Burguer 5",
-          "desc": "Medallón de 180 gr + Cheddar + Panceta + Salsa de Mostaza DIJON y MIEL + Pan de Papa Casero.",
-          "precio" : 1000,
-          "imagen": "../image/burguer5.jpg"
-        },
-        {
-          "id" : 6,
-          "nombre": "Burguer 6",
-          "desc": "Medallón de 180 gr + Queso azul + Panceta + Cebolla caramelizada + Pan de Papa Casero.",
-          "precio" : 1000,
-          "imagen": "../image/burguer6.jpg"
-        }
-] 
+  {
+    "id": 1,
+    "nombre": "Burguer 1",
+    "desc": "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces + Pan de Papa Casero.",
+    "precio": 1200,
+    "imagen": "../image/burguer1.jpg",
+    "categoria": "burger"
+  },
+  {
+    "id": 2,
+    "nombre": "Burguer 2",
+    "desc": "Medallon de 180gr + Cheddar + Tomate + Lechuga + Pepinos Agridulces y Pan de papa Casero",
+    "precio": 1000,
+    "imagen": "../image/burguer2.jpg",
+    "categoria": "burger"
+  },
+  {
+    "id": 3,
+    "nombre": "Burguer 3",
+    "desc": "Medallón de 180 gr + Jamón + Muzzarella + Huevo a la Plancha + Morrón asado + Rúcula + Alioli y Pan de papa",
+    "precio": 1000,
+    "imagen": "../image/burguer3.jpg",
+    "categoria": "burger"
+  },
+  {
+    "id": 4,
+    "nombre": "Burguer 4",
+    "desc": "Medallón de 180 gr + Cebolla caramelizada+ Queso Brie + Pepinos agridulces + Pan de papa Casero.",
+    "precio": 1000,
+    "imagen": "../image/burguer4.jpg",
+    "categoria": "burger"
+  },
+  {
+    "id": 5,
+    "nombre": "Burguer 5",
+    "desc": "Medallón de 180 gr + Cheddar + Panceta + Salsa de Mostaza DIJON y MIEL + Pan de Papa Casero.",
+    "precio": 1000,
+    "imagen": "../image/burguer5.jpg",
+    "categoria": "burger"
+  },
+  {
+    "id": 6,
+    "nombre": "Burguer 6",
+    "desc": "Medallón de 180 gr + Queso azul + Panceta + Cebolla caramelizada + Pan de Papa Casero.",
+    "precio": 1000,
+    "imagen": "../image/burguer6.jpg",
+    "categoria": "burger"
+  },
+  {
+    "id": 7,
+    "nombre": "Plus cheddar",
+    "desc": "Cheddar en las papas que vienen con tu burger",
+    "precio": 300,
+    "imagen": "../image/cheddar-extra.jpg",
+    "categoria": "extras"
+  },
+  {
+    "id": 8,
+    "nombre": "Plus Cheddar y Panceta",
+    "desc": "Un extra de Cheddar y Panceta a las papas de tu Burger",
+    "precio": 430,
+    "imagen": "../image/cheddar-y-panceta.jpg",
+    "categoria": "extras"
+  },
+  {
+    "id": 9,
+    "nombre": "Medallón extra de Carne",
+    "desc": "Medallón Extra de Carne de 180gr",
+    "precio": 360,
+    "imagen": "../image/medallon-de-carne.jpg",
+    "categoria": "extras"
+  },
+  {
+    "id": 10,
+    "nombre": "Extra Cheddar para Burger",
+    "desc": "Podes agregarle un Extra de Cheddar a tu Burger",
+    "precio": 290,
+    "imagen": "../image/cheddar-extra.jpg",
+    "categoria": "extras"
+  },
+  {
+    "id": 11,
+    "nombre": "Extra Jamon",
+    "desc": "Podes Agregarle Un Extra de Jamón a tu Burger",
+    "precio": 230,
+    "imagen": "../image/extra-jamon.jpg",
+    "categoria": "extras"
+  },
+  {
+    "id":12,
+    "nombre": "Extra TYBO",
+    "desc": "Podes agregarle un Extra de queso TYBO a tu burger",
+    "precio": 230,
+    "imagen": "../image/extra-tybo.jpg",
+    "categoria": "extras"
+  },
+  {
+    "id": 13,
+    "nombre": "Extra Queso Azul",
+    "desc": "Podes Agregarle un extra de Queso Azul a tu Burger",
+    "precio": 230,
+    "imagen": "../image/queso-azul.jpg",
+    "categoria": "extras"
+  },
+  {
+    "id": 14,
+    "nombre": "Extra Huevo o Verdura",
+    "desc": "seleccionar agregado y cantidad",
+    "precio": 100,
+    "imagen": "../image/extra-huevo.jpg",
+    "categoria": "extras"
+  },
+  {
+    "id": 15,
+    "nombre": "Salta 473cc",
+    "desc": "Aclarar gusto (Rubia, Roja, Ipa)",
+    "precio": 430,
+    "imagen": "../image/beer_salta.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 16,
+    "nombre": "Warsteiner 473cc",
+    "desc": "Aclarar gusto (Rubia, Roja, Ipa)",
+    "precio": 450,
+    "imagen": "../image/warsteiner.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 17,
+    "nombre": "Miller 473cc",
+    "desc": "",
+    "precio": 450,
+    "imagen": "../image/beer_miller.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 18,
+    "nombre": "Sol 473cc",
+    "desc": "",
+    "precio": 400,
+    "imagen": "../image/beer_sol.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 19,
+    "nombre": "Scheneider 473cc",
+    "desc": "",
+    "precio": 300,
+    "imagen": "../image/beer_scheneider.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 20,
+    "nombre": "Amstel 473cc",
+    "desc": "",
+    "precio": 400,
+    "imagen": "../image/CERVEZA-AMSTEL-LAGER-LATA-473C-1-18142.webp",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 21,
+    "nombre": "Grolsch 473 cc",
+    "desc": "",
+    "precio": 450,
+    "imagen": "../image/grolsch.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 22,
+    "nombre": "Andes 473cc",
+    "desc": "aclarar el gusto deseado (Ipa, Roja, Rubia, vendimia)",
+    "precio": 300,
+    "imagen": "../image/andes.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 23,
+    "nombre": "Imperial 473cc",
+    "desc": "aclarar variedad (lager, golden, roja, ipa apa)",
+    "precio": 300,
+    "imagen": "../image/imperial.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 24,
+    "nombre": "Antares 473cc",
+    "desc": "aclarar gusto ( Atlantica, carnaval session ipa)",
+    "precio": 300,
+    "imagen": "../image/antares.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 25,
+    "nombre": "Heineken 710 cc",
+    "desc": "",
+    "precio": 300,
+    "imagen": "../image/heneiken710.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 26,
+    "nombre": "Imperial 710cc",
+    "desc": "indicar el gusto deseado (lager, roja)",
+    "precio": 300,
+    "imagen": "../image/imperial710.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 27,
+    "nombre": "Heineken 473 cc",
+    "desc": "",
+    "precio": 300,
+    "imagen": "../image/heneiken473.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 28,
+    "nombre": "GOOSE 473",
+    "desc": "Aclarar sabor, Pilsner o Ipa hazy",
+    "precio": 300,
+    "imagen": "../image/goose.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 29,
+    "nombre": "MICHELOB 473CC",
+    "desc": "",
+    "precio": 300,
+    "imagen": "../image/michelob.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 30,
+    "nombre": "STELLA",
+    "desc": "Aclarar Sabor (Rubia, Noire)",
+    "precio": 300,
+    "imagen": "../image/stella.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 31,
+    "nombre": "BUDWEISER 473 CC",
+    "desc": "",
+    "precio": 300,
+    "imagen": "../image/budweiser.jpg",
+    "categoria": "cervezas"
+  },
+  {
+    "id": 32,
+    "nombre": "Aquarius 1.5L",
+    "desc": "Aclarar gusto deseado",
+    "precio": 400,
+    "imagen": "../image/aquarius-1,5L.jpg",
+    "categoria": "sinAlcohol"
+  },
+  {
+    "id": 33,
+    "nombre": "Gaseosas linea Coca-Cola 1.5L",
+    "desc": "aclarar gaseosa deseada",
+    "precio": 300,
+    "imagen": "../image/coca-sprite-1.5L.jpg",
+    "categoria": "sinAlcohol"
+  },
+
+  {
+    "id": 34,
+    "nombre": "Aquarius 600ml",
+    "desc": "Aclarar gusto deseado",
+    "precio": 300,
+    "imagen": "../image/aquarius-600ml.jpg",
+    "categoria": "sinAlcohol"
+  },
+
+  {
+    "id": 35,
+    "nombre": "Gaseosas linea Coca-Cola 600ml",
+    "desc": "Aclarar gaseosa deseada",
+    "precio": 300,
+    "imagen": "../image/coca-sprite-600ml.jpg",
+    "categoria": "sinAlcohol"
+  }
+]
