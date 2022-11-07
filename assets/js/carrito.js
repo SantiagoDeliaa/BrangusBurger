@@ -115,13 +115,21 @@ carrito.forEach(data => {
 
   document.addEventListener('change', e =>{
     if(e.target.matches('#take_away') || e.target.matches('#home_delivery')){
-      const containerNextStep = document.getElementById('container_nextStep');
-      console.log(containerNextStep)
+      // const containerNextStep = document.getElementById('container_nextStep');
       const value = e.target.value;
+
+      const takeAwayCont = document.querySelector('#take_away-cont')
+      const deliveryCont = document.querySelector('#delivery-cont')
       if(value == 1){
-        console.log('ok 1')
+        deliveryCont.classList.remove('delivery-cont--block')
+        deliveryCont.classList.remove('delivery-cont--hidde')
+        takeAwayCont.classList.remove('take_away-cont--hidde')
+        takeAwayCont.classList.add('take_away-cont--block')
       }else{
-        console.log('ok 2')
+        takeAwayCont.classList.remove('take_away-cont--block')
+        takeAwayCont.classList.add('take_away-cont--hidde')
+        deliveryCont.classList.remove('delivery-cont--hidde')
+        deliveryCont.classList.add('delivery-cont--block')
       }
     }
   })
