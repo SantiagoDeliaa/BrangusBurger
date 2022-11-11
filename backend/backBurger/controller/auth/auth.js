@@ -62,10 +62,6 @@ const ingreso = async (req, res, next) => {
 
     }
 
-    return res.cookie('token', accessToken, {
-        httpOnly: true
-    })
-
 }
 
 

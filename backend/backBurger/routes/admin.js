@@ -12,7 +12,7 @@ const controllerAuth = require('../controller/auth/auth');
 // const { route } = require('./api');
 
 
-router.get('/', controllerAuth.validateToken, controller.index)
+router.get('/', controller.index)
 
 
 
