@@ -1,8 +1,8 @@
-// const {validationResult} = require('express-validator')
 
-// const { body } = require('express-validator')
-// const { stringify } = require('postcss')
-// const sharp = require('sharp')
+const jwt = require('jsonwebtoken')
+
+
+
 const {Producto} = require('../../models/productos')
 
 const create = (req, res) => {
@@ -10,6 +10,9 @@ const create = (req, res) => {
 }
 
 const index = async (req, res) => {
+    console.log(req.token)
+
+
     try {
         const producto = await Producto.find()
         console.log(producto)

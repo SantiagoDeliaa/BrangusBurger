@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
+
 const storeSchema = new Schema( {
     nombre: {
         type: String,
-        required: true,
+        required: "Agrega tu nombre",
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        lowercase: true,
+        trim:true
     },
     password: {
         type: String,
         required: true,
-        unique: true,
     }
 })
 

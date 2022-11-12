@@ -6,6 +6,8 @@ const router = express.Router();
 // const sharp = require('sharp')
 
 const controller = require('../controller/admin/productos');
+const controllerAuth = require('../controller/auth/auth');
+
 
 // const { route } = require('./api');
 
